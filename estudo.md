@@ -120,3 +120,49 @@ e vai desfazer a migration que executou
 
 Ai posso editar os campos e executar novamente.
 > npm run knex -- migrate:latest
+
+------------------------------------------------------
+> npm run knex -- migrate:make add-session-id-to-transactions
+
+# Variaveis de ambiente
+
+Extensão dot Envi
+
+> npm i dotenv
+
+joga todas variaveis dentro de process.env
+
+# Zod
+
+> npm i zod
+
+Ele irá fazer as validações do .env colocando tudo certinho inclusive importando
+
+# REQUISITOS FUNCIONAIS
+Quais são as funcionalidades da nossa aplicação, o que o usuário pode e não pode fazer no nosso App
+
+
+- [ ] O usuário deve poder criar uma nova transação;
+- [ ] O usuário deve obter extrato da conta;
+- [ ] O usuário deve poder listar todas transações que já ocorreram
+- [ ] O usuário deve poder visualizar uma transação única;
+
+# REGRAS DE NEGÓCIO
+Condicionais
+
+- [  ] A transação pode ser do tipo credito que somará ao valor total ou débito que subtrairá;
+- [  ] Deve ser possivel identificarmos o usuário entre as requisições;
+- [  ] O usuário só pode vizualiar as transações do qual ele criou;
+
+# REQUISITOS NÃO FUNCIONAIS
+Tech o que vamos utilizar para atingir cada funcionalidade 
+
+
+# PLUGIN 
+
+Separar a rota em outro arquivo, pode separar outras coisas dentro de uma aplicação
+
+Obs: Dentro do server.ts posso criar um prefix, para deixar o nome da rota padrão.
+
+Hackzinho legal
+Obs: @types... facilita identificar as tabelas do knex e aparece os atributos do knex
