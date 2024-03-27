@@ -166,3 +166,26 @@ Obs: Dentro do server.ts posso criar um prefix, para deixar o nome da rota padr�
 
 Hackzinho legal
 Obs: @types... facilita identificar as tabelas do knex e aparece os atributos do knex
+
+# Cookie
+
+> npm i @fastify/cookie
+
+server.ts
+import cookie from '@fastify/cookie'
+app.register(cookie)
+
+
+# preHandler
+
+É um parametro do qual ele vai fazer uma pre checagem, do qual posso colocar diversas funções... antes de executar a função que é o handler
+
+formas de compartilhar regras de negocio em várias rotas
+
+- Handler Global (middleware global)
+
+quando a gente cria uma plugin global(parte separada da aplicação, contexto especifico)
+
+app.addHook('preHandler') na rota
+
+ou se eu quiser que funcione para todas as rotas, basta colocar globalmente antes dos plugins, no contexto global do fastify
