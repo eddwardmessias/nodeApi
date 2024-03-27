@@ -188,4 +188,74 @@ quando a gente cria uma plugin global(parte separada da aplicação, contexto es
 
 app.addHook('preHandler') na rota
 
-ou se eu quiser que funcione para todas as rotas, basta colocar globalmente antes dos plugins, no contexto global do fastify
+ou se eu quiser que funcione para todas as rotas, basta colocar globalmente antes dos plugins, no contexto global do fastify.
+
+# TESTES AUTOMATIZADOS
+
+Priomordiais como aprendizado
+
+Forma de a gente manter a confiança na hora de manunteção no código a longo prazo.
+
+Confiança para trabalhar no código
+
+-Unitarios: Exclusivamente unidade da sua aplicação, pequena parte isolada.
+
+-Integração: Comunicação entre duas ou mais unidades
+
+-E2E: Simulam um usuário, operando na nossa aplicação
+
+- Piramide de Testes: Cada teste tem uma dificuldade e exigências 
+
+E2E: Não dependem de nenhuma tecnologia, não depende de arquitetura (São teste lentos - Quantidade de teste... ex 2k...) 
+
+Poucos testes E2E, mais testes de integração e muitos testes unitários(depedem de arquitetar aplicação)
+
+# TESTES
+
+Jest tem que que configurar um bucado de coisa no vitest 
+
+> npm i vitest -D
+
+Teste é composto por 3 variaveis importantes
+Enunciado
+Operação - Chamada
+Validação
+
+> npx vitest
+rodar o teste
+
+> npm i supertest -D
+Requisições, com fastify, express, sem colocar ela no ar, sem colocar no listen
+
+to teste só importa o App
+
+> npm i -D @types/supertest
+supertest sempre precisa receber o servidor nativo do node 
+app.server
+
+executa uma única vez antes de todos os testes
+beforeAll(() => {})
+
+Antes de cada um dos testes 
+beforEach
+
+after e aftereach
+
+-> Categorizar teste - colocar no mesmo arquivo
+-> Cria um contexto no describe -> Diz o nome da categoria e pode colocar mais uma describe dentro do proprio describe
+
+existe a função teste e it - que faz a mesma coisa
+
+todo teste tem que se excluir de contexto... jamais posso ter um teste que que dependa de outro teste
+
+--> FOI CRIADA VARIAVEL DE AMBIENTE TEST
+
+quando executo o test com vitest ou jest a variavel do node_env é preenchida com test automaticamente
+
+quando é colocado o if no index de env. quando salvar  é criado um banco de dados separados para teste por conta
+
+e a migrations não foi executadas no banco de teste
+
+execSync -> executa código no terminal
+
+banco de dados tem que tá zerado depois do teste
