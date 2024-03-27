@@ -259,3 +259,32 @@ e a migrations não foi executadas no banco de teste
 execSync -> executa código no terminal
 
 banco de dados tem que tá zerado depois do teste
+
+antes de cada um do testes beforeEach
+
+# DEPLOY 
+Enviar projeto para produção
+
+Arquiteturas de deplou - Formas de subir o projeto(Serveless, docker com kubernets)
+
+Serviço Gerenciado
+
+--> Nenhuma plataforma de node vai entender TypeScript
+
+tsc config
+"rootDir"
+"outDir"
+
+> npm i tsup -D
+
+trabalhar com typscript fazer bild - usa o esbuild debaixo dos panos
+
+vou nos scripts faço alias e depois
+
+> npm run build
+
+cria pasta dist, se quiser trocar no scripts "tsup src --out-dir build"
+
+foi convertido para js e deve conseguir rodar o servidor....
+
+> node build/server.js
